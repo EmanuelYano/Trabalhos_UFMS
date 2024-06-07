@@ -16,11 +16,43 @@ abstract class Personagem {
         this.arma = arma;
     } 
 
-    public abstract void printStatus();
-    public abstract Personagem atacar(Personagem b);
+    public void printStatus(){
+        System.out.println("Paladino [Saude: "+ getSaude() + 
+        ", Forca: " + getForca() + ", Destreza: " 
+        + getDestreza() + getArma() + "]");
+    }
 
-    protected abstract double calculaDano();
-    protected abstract double recebeDano(double pontosDano);
-    protected abstract boolean estaMorto();
+    /*public abstract Personagem atacar(Personagem b){
+
+    };*/
+
+    private abstract double calculaDano(){
+        return forca * arma.getModificador();
+    };
+    private abstract void recebeDano(double pontosDano){
+        saude = saude - pontosDano;
+    };
+    private abstract boolean estaMorto(){
+        return (getSaude()>=1);
+    };
+
+    private String getArma(){
+        return arma.getNome();
+    } 
+
+    private double getForca(){
+        return forca;
+    }
+
+    private double getDestreza(){
+        return destreza;
+    }
+
+    private double getSaude(){
+        return saude;
+    }
+    /*private void setSaude(double saude){
+        this.saude = saude;
+    }*/
 
 }

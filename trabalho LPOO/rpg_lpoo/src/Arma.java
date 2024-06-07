@@ -9,6 +9,10 @@ abstract class Arma {
         this.modDano = modificador;
     }
 
-    abstract public String getNome();
-    abstract public double getModificador();
+    public String getNome(){
+        return nome;
+    };
+    public double getModificador(){
+        return modDano;
+    };
 }
