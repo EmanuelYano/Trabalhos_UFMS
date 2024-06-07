@@ -1,6 +1,6 @@
 public class Maca extends ArmaClerigo{
 
-    public Maca(String nome, double modificador) {
+    public Maca() {
         super("Maça", 0.4);
     }
     

@@ -1,6 +1,6 @@
 public class Psikappa extends ArmaMago{
 
-    public Psikappa(String nome, double modificador) {
+    public Psikappa() {
         super("Psi-Kappa", 0.5);
     }
     

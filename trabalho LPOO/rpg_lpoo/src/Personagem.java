@@ -17,25 +17,46 @@ abstract class Personagem {
     } 
 
     public void printStatus(){
-        System.out.println("Paladino [Saude: "+ getSaude() + 
-        ", Forca: " + getForca() + ", Destreza: " 
-        + getDestreza() + getArma() + "]");
+        System.out.printf(getNometipo());
+        if(!estaMorto()){
+            System.out.printf(" [Saude: %.2f", getSaude());
+        }else{
+            System.out.printf(" [Morreu ");
+        }
+       // System.out.printf(" [Saude: "+ getSaude());
+        System.out.println(", Forca: " + getForca() + ", Destreza: " 
+        + getDestreza() + " " + getArma() + "]");
     }
 
-    /*public abstract Personagem atacar(Personagem b){
+    public void atacar(Personagem b){
+        double dano = calculaDano();
+        b.recebeDano(dano);
+        /*if(!b.estaMorto()){
+            System.out.println("vivão!");
+        }else{
+            System.out.println("faliceu!");
+        }*/
 
-    };*/
-
-    private abstract double calculaDano(){
-        return forca * arma.getModificador();
-    };
-    private abstract void recebeDano(double pontosDano){
-        saude = saude - pontosDano;
-    };
-    private abstract boolean estaMorto(){
-        return (getSaude()>=1);
     };
 
+    
+
+    private double calculaDano(){
+        return forca * (1 + arma.getModificador());
+    };
+    private double recebeDano(double pontosDano){
+        double attSaude;
+        attSaude = getSaude() - pontosDano;
+        setSaude(attSaude);
+        return attSaude;
+    };
+    private boolean estaMorto(){
+        return (getSaude()<1);
+    };
+
+    private String getNometipo(){
+        return nomeTipo;
+    };
     private String getArma(){
         return arma.getNome();
     } 
@@ -51,8 +72,8 @@ abstract class Personagem {
     private double getSaude(){
         return saude;
     }
-    /*private void setSaude(double saude){
+    private void setSaude(double saude){
         this.saude = saude;
-    }*/
+    }
 
 }
