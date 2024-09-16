@@ -1,6 +1,9 @@
 public class Mago extends Personagem{
 
-    public Mago(String nomeTipo, double saude, double forca, double destreza, Arma arma) {
-        super(nomeTipo, saude, forca, destreza, arma);
+    /*
+        Método construtor da classe Mago
+    */
+    public Mago(double saude, double forca, double destreza, Arma arma) {
+        super("Mago", saude, forca, destreza, arma);
     } 
 }

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class main {
+public class main{
     public static void main(String[] args) {
     /*  Arma espada = new Espada();
         Arma lanca = new Lanca();
@@ -13,68 +13,102 @@ public class main {
         Scanner scan = new Scanner(System.in);  
         int[] numeros = new int[5];
         int[] numeros2 = new int[5];
+        int[] numeros3 = new int[3];
+        String l1,l3,l5;
+        String[] l2,l4,l6;
 
-        String l1 = scan.nextLine();
-        String[] l2 = l1.split(" ");
-        for (int i = 0; i < l2.length; i++) {
-            numeros[i] = Integer.parseInt(l2[i]);
+        l1 = scan.nextLine();
+        l2 = l1.split(" ");
+        numeros = convertNum(l2);
+
+        l3 = scan.nextLine();
+        l4 = l3.split(" ");
+        numeros2 = convertNum(l4);
+
+        Personagem a = CriacaoPessonagem.checagem(numeros);
+        Personagem b = CriacaoPessonagem.checagem(numeros2);
+
+        //a.printStatus();
+        //b.printStatus();
+        l5 = scan.nextLine();
+        l6 = l5.split(" ");
+        numeros3 = convertNum(l6);
+
+        while (numeros3[0] != 0 || numeros3[1] != 0){
+            if(numeros3[0] == 1){
+                a.atacar(b);
+            }else{
+                b.atacar(a);
+            }
+
+            l5 = scan.nextLine();
+            l6 = l5.split(" ");
+            numeros3 = convertNum(l6);
         }
-
-        String l3 = scan.nextLine();
-        String[] l4 = l3.split(" ");
-        for (int i = 0; i < l4.length; i++) {
-            numeros2[i] = Integer.parseInt(l4[i]);
-        }
-
-        escolha(numeros);
-
-        escolha(numeros2);
 
 
         
     }
-
-    public static int escolha(int[] numeros){
-        if(numeros[0] == 1){
-            if(numeros[4] == 1){
-                Arma transmutacao = new Transmutacao();
-                Mago mago = new Mago("Mago",numeros[1],numeros[2],numeros[3],transmutacao);
-                mago.printStatus();
-                return mago;
-            }else{
-                Arma psikappa = new Psikappa();
-                Mago mago = new Mago("Mago",numeros[1],numeros[2],numeros[3],psikappa);
-                mago.printStatus();
-                return mago;    
-            }
-        }else if(numeros[0] == 2){
-            if(numeros[4] == 1){
-                Arma espada = new Espada();
-                Paladino paladino = new Paladino("Paladino",numeros[1],numeros[2],numeros[3],espada);
-                paladino.printStatus();
-                return paladino;
-            }else{
-                Arma lanca = new Lanca();
-                Paladino paladino = new Paladino("Paladino",numeros[1],numeros[2],numeros[3],lanca);
-                paladino.printStatus();
-                return paladino;
-    
-            }
-        }else if(numeros[0] == 3){
-            if(numeros[4] == 1){
-                Arma martelo = new Martelo();
-                Clerigo clerigo = new Clerigo("Clerigo",numeros[1],numeros[2],numeros[3],martelo);
-                clerigo.printStatus();
-                return clerigo;
-            }else{
-                Arma maca = new Maca();
-                Clerigo clerigo = new Clerigo("Clerigo",numeros[1],numeros[2],numeros[3],maca);
-                clerigo.printStatus();
-                return clerigo;
-    
-            }
-        }else{
-            System.out.println("Classe não identificada");
+    public static int[] convertNum(String[] l){
+        int[] num = new int[l.length];
+        for (int i = 0; i < l.length; i++) {
+            num[i] = Integer.parseInt(l[i]);
         }
+        return num;
     }
+    
+//intellij comunidade
+    /*case 1
+1 10 10 5 1 
+1 10 10 6 2 
+1 2 
+2 1 
+0
+
+case 2
+2 10 5 6 1 
+2 10 6 5 2 
+1 2 
+2 1 
+1 2 
+1 2 
+2 1 
+1 2 
+2 1 
+0
+
+case 3
+3 10 10 5 1
+3 10 10 6 2 
+1 2 
+2 1 
+1 2 
+0
+
+case 4
+4 10 5 6 1 
+3 10 6 5 1 
+1 2 
+1 2 
+1 2 
+1 2 
+2 1 
+2 1 
+1 2 
+1 2 
+2 1 
+1 2 
+0
+
+case 5
+4 10 5 4 2 
+1 10 5 9 2 
+2 1 
+1 2 
+2 1 
+1 2 
+0
+
+ */
+    
 }

@@ -1,7 +1,10 @@
 public class Transmutacao extends ArmaMago{
-
+    
+    /*
+        Método construtor da classe Transmutação
+    */
     public Transmutacao() {
-        super("Magia de Transmutação", 0.25);
+        super("Magia da Transmutação", 0.25);
     }
     
 }

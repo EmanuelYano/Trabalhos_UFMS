@@ -14,6 +14,7 @@ main:
 	addi $a1, $zero, 0	# Salva o indice i-inicial em $a1
 	add $a2, $zero, $t1	# Salva o indice i-final $t1 em $a2
 	jal ordenaRapido
+	jal print
 	addi $v0, $zero, 10 # Syscall exit
   	syscall
 
@@ -106,6 +107,16 @@ troca:
 	sw $s3, 0($t2)		# Salva $s3 na memoria de $t2 
 	addi $sp, $sp, 12	# Restauro a pilha
 	jr $ra			# Retorno ao $ra inicial
+	
+print:
+	sll $t1, $a0, 2
+	add $t1, $t1, $a0
+	lw $t2, 0($t1)
+	addi  $v0, $zero, 1   # Syscall print int
+	syscall
+	add $a0, $t2, $zero
+  	syscall  	
+  	jr $ra
     
     
 
