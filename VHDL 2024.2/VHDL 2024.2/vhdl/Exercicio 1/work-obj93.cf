@@ -1,0 +1,10 @@
+v 4
+file . "fulladder1.vhd" "50adc2225d3895b56f673aa968df5f49387dcffd" "20240904144631.545":
+  entity fulladder1 at 1( 0) + 0 on 11;
+  architecture behavioral of fulladder1 at 11( 170) + 0 on 12;
+file . "fulladder4.vhd" "5ffbe3c2872fd446e3c11eb37663a291a249160f" "20240904144613.549":
+  entity fulladder4 at 1( 0) + 0 on 4;
+  architecture structural of fulladder4 at 13( 254) + 0 on 4;
+file . "tbfulladder1.vhd" "20586775d205f62274a20676633439ed601abd00" "20240904144631.545":
+  entity tbfulladder1 at 1( 0) + 0 on 13;
+  architecture rtl of tbfulladder1 at 6( 84) + 0 on 14;

@@ -1,0 +1,9 @@
+|half_adder
+x => sum.IN0
+x => carry.IN0
+y => sum.IN1
+y => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+

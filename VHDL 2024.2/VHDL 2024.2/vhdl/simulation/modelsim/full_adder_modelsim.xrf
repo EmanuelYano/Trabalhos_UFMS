@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, Z:/vhdl/half_adder_sch.bdf
+source_file = 1, Z:/vhdl/half_adder.vhd
+source_file = 1, Z:/vhdl/fulladder1.vhd
+source_file = 1, Z:/vhdl/db/full_adder.cbx.xml
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = half_adder
+instance = comp, \sum~output\, sum~output, half_adder, 1
+instance = comp, \carry~output\, carry~output, half_adder, 1
+instance = comp, \x~input\, x~input, half_adder, 1
+instance = comp, \y~input\, y~input, half_adder, 1
+instance = comp, \sum~0\, sum~0, half_adder, 1
+instance = comp, \carry~0\, carry~0, half_adder, 1
